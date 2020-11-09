@@ -1,0 +1,13 @@
+[user]
+	email = jackyhobingo@gmail.com
+	name = Hua-Yi Ho
+[alias]
+	st = status
+	br = branch
+	cm = commit
+	co = checkout
+	adog = log --all --decorate --oneline --graph
+	lg = log --color --graph --pretty=foramt:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	l = log --oneline --decorate
+[core]
+	editor = vim
