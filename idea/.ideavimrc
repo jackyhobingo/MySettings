@@ -1,0 +1,9 @@
+set relativenumber
+set incsearch
+set cursorline
+nmap <space> :action AceAction<CR>
+nmap zn :action GotoNextError<CR>
+nmap zN :action GotoPreviousError<CR>
+nmap zro :action Move<CR>
+nmap zra :action RunClass<CR>
+nmap :e :action NewFile<CR>
