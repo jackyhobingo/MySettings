@@ -1,0 +1,4 @@
+.new : setFunction
+    ANY   ->  $val:lowercaseAndDash(expr))$ = $expr$($second$)$END$
+.val : setFunctions
+    ANY   ->  $val:lowercaseAndDash(expr))$ = $expr$$END$
