@@ -1,9 +1,59 @@
+nmap zso :source ~/.ideavimrc<cr>
+
 set relativenumber
 set incsearch
 set cursorline
-nmap <space> :action AceAction<CR>
-nmap zn :action GotoNextError<CR>
-nmap zN :action GotoPreviousError<CR>
-nmap zro :action Move<CR>
-nmap zra :action RunClass<CR>
-nmap :e :action NewFile<CR>
+
+" quick esc
+inoremap <C-j> <ESC>
+
+nnoremap zt zt2k2j
+vmap S :action SurroundWithLiveTemplate<CR>
+nnoremap z) vi)
+nnoremap z] vi]
+nnoremap z( vi(
+nnoremap z[ vi[
+nnoremap z" vi"
+nnoremap z' vi'
+nnoremap <F1> mpy?def test_<CR>`pp?def test_<CR>w5l
+inoremap <F1> <ESC>mpy?def test_<CR>`pp?def test_<CR>w5l
+nnoremap zh ^
+nnoremap zl $
+nnoremap <BS> i<BS>
+
+nnoremap <A-.> iself.
+inoremap <A-.> self.
+nnoremap <space> :action AceAction<cr>
+nnoremap zn :action GotoNextError<cr>
+nnoremap zN :action GotoPreviousError<cr>
+nnoremap zf :action GotoDeclaration<cr>
+nnoremap zro :action move<cr>
+nnoremap zrm :action ExtractMethod<cr><esc>
+vmap m :action ExtractMethod<cr>
+vmap M :action ExtractMethod<cr>
+
+vmap S :action SurroundWithLiveTemplate<CR>
+vnoremap zrm :action ExtractMethod<cr><esc>
+nmap zb ciw
+vmap zb <ESC>ciw
+
+nnoremap zrp :action IntroduceParameter<cr>
+noremap <a-j> <esc>:action IntroduceVariable<cr>
+inoremap <a-;> <esc>:action IntroduceVariable<cr>
+nnoremap <a-;> :action IntroduceVariable<cr>
+nnoremap zrf :action IntroduceField<cr>
+nmap zsp f":action IntroduceParameter<cr>
+nmap \s :action ChangeSignature<cr>
+nnoremap zk :action Back<cr>
+"inoremap zk <esc>:action Back<cr>
+nnoremap zj :action Forward<cr>
+"inoremap zj <esc>:action Forward<cr>
+
+nmap <A-j> ^/def <CR>w
+nmap <A-k> ^?def <CR>w
+
+nmap zrr :action RenameElement<cr>
+nmap zri :action Inline<cr>
+nmap zrt :action SearchEverywhere<cr>
+nmap zra :action ReformatCode<cr>:action Run<CR>
+"zra :action RunClass<CR>

@@ -1,4 +1,12 @@
-.new : setFunction
-    ANY   ->  $val:lowercaseAndDash(expr))$ = $expr$($second$)$END$
-.val : setFunctions
-    ANY   ->  $val:lowercaseAndDash(expr))$ = $expr$$END$
+.new : new object assign
+    ANY   ->  $new:snakeCase(expr)$ = $expr$($second$)$END$
+.val : val assign
+    ANY   ->  $val:snakeCase(expr)$ = $expr$$END$
+.def : def
+    ANY   ->  def $expr$($first$):\
+        $END$
+.rdef : with hint def
+    ANY   ->  def $expr$($arg#1$) -> $type#2$:\
+        $END$
+.ae : assertEqual function
+    ANY   ->  self.assertEqual($expr$, $val$)$END$
