@@ -13,12 +13,21 @@ nnoremap zt zt2k2j
 
 nnoremap c' ci'
 nnoremap c" ci"
+nnoremap c) ci)
+nnoremap c( ci(
+nnoremap c] ci]
+nnoremap c[ ci[
+nnoremap c} ci}
+nnoremap c{ ci{
+
+nnoremap z" vi"
+nnoremap z' vi'
 nnoremap z) vi)
 nnoremap z] vi]
 nnoremap z( vi(
 nnoremap z[ vi[
-nnoremap z" vi"
-nnoremap z' vi'
+nnoremap z{ vi{
+nnoremap z} vi}
 
 " python generate test function
 nnoremap <F2> mpy?def test_<CR>`pp?def test_<CR>w5l
@@ -32,7 +41,6 @@ nnoremap <BS> a<BS>
 
 nnoremap <A-.> iself.
 inoremap <A-.> self.
-nnoremap <space> :action AceAction<cr>
 nnoremap zn :action GotoNextError<cr>
 nnoremap zN :action GotoPreviousError<cr>
 nnoremap zf :action GotoDeclaration<cr>
@@ -52,12 +60,12 @@ vnoremap zrv :action IntroduceVariable<cr>v
 nnoremap zrv :action IntroduceVariable<cr>
 nmap zsv f":action IntroduceVariable<cr>
 
-vnoremap \v :action IntroduceField<cr>v
+vnoremap \f :action IntroduceField<cr>v
 vnoremap zrf :action IntroduceField<cr>v
 nnoremap zrf :action IntroduceField<cr>
 nmap zsf f":action IntroduceField<cr>
 
-vnoremap \v :action IntroduceParameter<cr>v
+vnoremap \p :action IntroduceParameter<cr>v
 vnoremap zrp :action IntroduceParameter<cr>v
 nnoremap zrp :action IntroduceParameter<cr>
 nmap zsp f":action IntroduceParameter<cr>
@@ -73,11 +81,11 @@ nnoremap <S-TAB> <<
 nmap <A-j> ^/def <CR>w
 nmap <A-k> ^?def <CR>w
 
-nmap zrr :action RenameElement<cr>
-nmap zri :action Inline<cr>
-nmap zrt :action SearchEverywhere<cr>
-nmap zra :action ReformatCode<cr>:action Run<CR>
-inoremap zra :action <ESC>ReformatCode<cr>:action Run<CR>
+nnoremap zrr :action RenameElement<cr>
+nnoremap zri :action Inline<cr>
+nnoremap zrt :action SearchEverywhere<cr>
+nnoremap zra :action ReformatCode<cr>:action Run<CR>
+inoremap zra <ESC>:action ReformatCode<cr>:action Run<CR>
 "zra :action RunClass<CR>
 
 "vnoremap i I
@@ -108,3 +116,4 @@ nmap gm8 :action GotoBookmark8<cr>
 nmap gm9 :action GotoBookmark9<cr>
 
 vmap S :action SurroundWithLiveTemplate<CR>
+nnoremap <space> :action AceAction<cr>
