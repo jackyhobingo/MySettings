@@ -1,25 +1,34 @@
-nmap zso :source ~/.ideavimrc<cr>
-
 set relativenumber
 set incsearch
 set cursorline
 
-" quick esc
-inoremap <C-j> <ESC>
 
+nmap zso :source ~/.ideavimrc<cr>
+
+" quick esc
+inoremap jj <ESC>
+
+" move screen to focus this line on line 2
 nnoremap zt zt2k2j
-vmap S :action SurroundWithLiveTemplate<CR>
+
+nnoremap c' ci'
+nnoremap c" ci"
 nnoremap z) vi)
 nnoremap z] vi]
 nnoremap z( vi(
 nnoremap z[ vi[
 nnoremap z" vi"
 nnoremap z' vi'
-nnoremap <F1> mpy?def test_<CR>`pp?def test_<CR>w5l
-inoremap <F1> <ESC>mpy?def test_<CR>`pp?def test_<CR>w5l
+
+" python generate test function
+nnoremap <F2> mpy?def test_<CR>`pp?def test_<CR>w5l
+inoremap <F2> <ESC>mpy?def test_<CR>`pp?def test_<CR>w5l
+" python generate normal function
+nnoremap <F1> mpy?def <CR>`pp?def <CR>
+inoremap <F1> <ESC>mpy?def <CR>`pp?def <CR>
 nnoremap zh ^
 nnoremap zl $
-nnoremap <BS> i<BS>
+nnoremap <BS> a<BS>
 
 nnoremap <A-.> iself.
 inoremap <A-.> self.
@@ -27,7 +36,7 @@ nnoremap <space> :action AceAction<cr>
 nnoremap zn :action GotoNextError<cr>
 nnoremap zN :action GotoPreviousError<cr>
 nnoremap zf :action GotoDeclaration<cr>
-nnoremap zro :action move<cr>
+nnoremap zro :action Move<cr>
 nnoremap zrm :action ExtractMethod<cr><esc>
 vmap m :action ExtractMethod<cr>
 vmap M :action ExtractMethod<cr>
@@ -37,18 +46,30 @@ vnoremap zrm :action ExtractMethod<cr><esc>
 nmap zb ciw
 vmap zb <ESC>ciw
 
-nnoremap zrp :action IntroduceParameter<cr>
-noremap <a-j> <esc>:action IntroduceVariable<cr>
-inoremap <a-;> <esc>:action IntroduceVariable<cr>
-nnoremap <a-;> :action IntroduceVariable<cr>
+"Introduce
+vnoremap \v :action IntroduceVariable<cr>v
+vnoremap zrv :action IntroduceVariable<cr>v
+nnoremap zrv :action IntroduceVariable<cr>
+nmap zsv f":action IntroduceVariable<cr>
+
+vnoremap \v :action IntroduceField<cr>v
+vnoremap zrf :action IntroduceField<cr>v
 nnoremap zrf :action IntroduceField<cr>
+nmap zsf f":action IntroduceField<cr>
+
+vnoremap \v :action IntroduceParameter<cr>v
+vnoremap zrp :action IntroduceParameter<cr>v
+nnoremap zrp :action IntroduceParameter<cr>
 nmap zsp f":action IntroduceParameter<cr>
+
 nmap \s :action ChangeSignature<cr>
 nnoremap zk :action Back<cr>
 "inoremap zk <esc>:action Back<cr>
 nnoremap zj :action Forward<cr>
 "inoremap zj <esc>:action Forward<cr>
 
+nnoremap <TAB> >>
+nnoremap <S-TAB> <<
 nmap <A-j> ^/def <CR>w
 nmap <A-k> ^?def <CR>w
 
@@ -56,4 +77,34 @@ nmap zrr :action RenameElement<cr>
 nmap zri :action Inline<cr>
 nmap zrt :action SearchEverywhere<cr>
 nmap zra :action ReformatCode<cr>:action Run<CR>
+inoremap zra :action <ESC>ReformatCode<cr>:action Run<CR>
 "zra :action RunClass<CR>
+
+"vnoremap i I
+" tagging
+nnoremap zmm :action ToggleBookmark<cr>
+nnoremap zm0 :action ToggleBookmark0<cr>
+nnoremap zm1 :action ToggleBookmark1<cr>
+nnoremap zm2 :action ToggleBookmark2<cr>
+nnoremap zm3 :action ToggleBookmark3<cr>
+nnoremap zm4 :action ToggleBookmark4<cr>
+nnoremap zm5 :action ToggleBookmark5<cr>
+nnoremap zm6 :action ToggleBookmark6<cr>
+nnoremap zm7 :action ToggleBookmark7<cr>
+nnoremap zm8 :action ToggleBookmark8<cr>
+nnoremap zm9 :action ToggleBookmark9<cr>
+
+nmap gmn :action GotoNextBookmark<cr>
+nmap gmN :action GotoPreviousBookmark<cr>
+nmap gm0 :action GotoBookmark0<cr>
+nmap gm1 :action GotoBookmark1<cr>
+nmap gm2 :action GotoBookmark2<cr>
+nmap gm3 :action GotoBookmark3<cr>
+nmap gm4 :action GotoBookmark4<cr>
+nmap gm5 :action GotoBookmark5<cr>
+nmap gm6 :action GotoBookmark6<cr>
+nmap gm7 :action GotoBookmark7<cr>
+nmap gm8 :action GotoBookmark8<cr>
+nmap gm9 :action GotoBookmark9<cr>
+
+vmap S :action SurroundWithLiveTemplate<CR>
