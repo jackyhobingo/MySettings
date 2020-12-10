@@ -3,7 +3,6 @@ set incsearch
 set cursorline
 
 
-nmap zso :source ~/.ideavimrc<cr>
 
 " quick esc
 inoremap jj <ESC>
@@ -29,18 +28,30 @@ nnoremap z[ vi[
 nnoremap z{ vi{
 nnoremap z} vi}
 
+nmap zb ciw
+vmap zb <ESC>ciw
+nnoremap <TAB> >>
+nnoremap <S-TAB> <<
+
+nnoremap zh ^
+nnoremap zl $
+nnoremap <BS> a<BS>
+
+
+
+"" python settings
 " python generate test function
 nnoremap <F2> mpy?def test_<CR>`pp?def test_<CR>w5l
 inoremap <F2> <ESC>mpy?def test_<CR>`pp?def test_<CR>w5l
 " python generate normal function
 nnoremap <F1> mpy?def <CR>`pp?def <CR>
 inoremap <F1> <ESC>mpy?def <CR>`pp?def <CR>
-nnoremap zh ^
-nnoremap zl $
-nnoremap <BS> a<BS>
 
+nmap <A-j> ^/def <CR>w
+nmap <A-k> ^?def <CR>w
 nnoremap <A-.> iself.
 inoremap <A-.> self.
+"" python settings 
 nnoremap zn :action GotoNextError<cr>
 nnoremap zN :action GotoPreviousError<cr>
 nnoremap zf :action GotoDeclaration<cr>
@@ -51,8 +62,6 @@ vmap M :action ExtractMethod<cr>
 
 vmap S :action SurroundWithLiveTemplate<CR>
 vnoremap zrm :action ExtractMethod<cr><esc>
-nmap zb ciw
-vmap zb <ESC>ciw
 
 "Introduce
 vnoremap \v :action IntroduceVariable<cr>v
@@ -75,11 +84,6 @@ nnoremap zk :action Back<cr>
 "inoremap zk <esc>:action Back<cr>
 nnoremap zj :action Forward<cr>
 "inoremap zj <esc>:action Forward<cr>
-
-nnoremap <TAB> >>
-nnoremap <S-TAB> <<
-nmap <A-j> ^/def <CR>w
-nmap <A-k> ^?def <CR>w
 
 nnoremap zrr :action RenameElement<cr>
 nnoremap zri :action Inline<cr>
@@ -117,3 +121,4 @@ nmap gm9 :action GotoBookmark9<cr>
 
 vmap S :action SurroundWithLiveTemplate<CR>
 nnoremap <space> :action AceAction<cr>
+nmap zso :source ~/.ideavimrc<cr>

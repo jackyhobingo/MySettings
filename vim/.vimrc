@@ -2,6 +2,39 @@ set nu
 set ruler 
 set title
 
+" quick esc
+inoremap jj <ESC>
+
+" move screen to focus this line on line 2
+nnoremap zt zt2k2j
+
+nnoremap c' ci'
+nnoremap c" ci"
+nnoremap c) ci)
+nnoremap c( ci(
+nnoremap c] ci]
+nnoremap c[ ci[
+nnoremap c} ci}
+nnoremap c{ ci{
+
+nnoremap z" vi"
+nnoremap z' vi'
+nnoremap z) vi)
+nnoremap z] vi]
+nnoremap z( vi(
+nnoremap z[ vi[
+nnoremap z{ vi{
+nnoremap z} vi}
+
+nmap zb ciw
+vmap zb <ESC>ciw
+nnoremap <TAB> >>
+nnoremap <S-TAB> <<
+
+nnoremap zh ^
+nnoremap zl $
+nnoremap <BS> a<BS>
+
 " For simpleScalar using
 au BufNewFile,BufRead *.def	set ft=c
 
