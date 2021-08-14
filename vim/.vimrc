@@ -14,6 +14,7 @@ filetype plugin indent on    " required
 set nu
 set ruler 
 set title
+set mouse=a
 set t_Co=256
 
 " quick esc
@@ -23,6 +24,10 @@ inoremap jj <ESC>
 vnoremap <C-D> VyP
 nnoremap <C-D> VyP
 
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv 
 
 " move screen to focus this line on line 2
 nnoremap zt zt2k2j
@@ -45,8 +50,11 @@ nnoremap z[ vi[
 nnoremap z{ vi{
 nnoremap z} vi}
 
-nmap zb ciw
-vmap zb <ESC>ciw
+nmap zz <C-W>\|
+nnoremap ZZ <C-W>=
+
+nnoremap zb ciw
+vnoremap zb <ESC>ciw
 nnoremap <TAB> >>
 nnoremap <S-TAB> <<
 
