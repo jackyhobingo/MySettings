@@ -1,9 +1,15 @@
 set nu
 set ruler 
 set title
+set t_Co=256
 
 " quick esc
 inoremap jj <ESC>
+
+" quick copy
+vnoremap <C-D> VyP
+nnoremap <C-D> VyP
+
 
 " move screen to focus this line on line 2
 nnoremap zt zt2k2j
@@ -40,6 +46,8 @@ au BufNewFile,BufRead *.def	set ft=c
 
 
 au Filetype python set tabstop=4 softtabstop=4 shiftwidth=4 smartindent expandtab autoindent
+au Filetype cpp set tabstop=4 shiftwidth=4 expandtab
+au Filetype c set tabstop=8 shiftwidth=8
 au Filetype python set backspace=indent,eol,start
 
 if has("autocmd")
