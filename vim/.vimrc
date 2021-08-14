@@ -44,13 +44,29 @@ nnoremap <BS> a<BS>
 " For simpleScalar using
 au BufNewFile,BufRead *.def	set ft=c
 
-
 au Filetype python set tabstop=4 softtabstop=4 shiftwidth=4 smartindent expandtab autoindent
-au Filetype cpp set tabstop=4 shiftwidth=4 expandtab
-au Filetype c set tabstop=8 shiftwidth=8
 au Filetype python set backspace=indent,eol,start
+au Filetype cpp set tabstop=4 shiftwidth=4 expandtab smartindent autoindent
+au Filetype c set tabstop=8 shiftwidth=8 smartindent autoindent
 
 if has("autocmd")
   filetype plugin indent on
 endif
 set showcmd
+
+" Quick Run
+nmap <F5> :call QuickRun()<CR>
+func! QuickRun()
+	exec "w"
+if &filetype == 'sh'
+	exec '!time bash %'
+elseif &filetype == 'python'
+	exec "!time python3 %"
+elseif &filetype == 'c'
+	exec "!gcc % -o quickRun.out"
+	exec "!time ./quickRun.out"
+elseif &filetype == 'cpp'
+	exec "!g++ % -o quickRun.out"
+	exec "!time ./quickRun.out"
+endif
+endfunc
