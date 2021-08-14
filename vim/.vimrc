@@ -1,3 +1,16 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 set nu
 set ruler 
 set title
@@ -53,7 +66,7 @@ if has("autocmd")
   filetype plugin indent on
 endif
 set showcmd
-
+nnoremap <F1> :NERDTreeTabsToggle<CR>
 " Quick Run
 nmap <F5> :call QuickRun()<CR>
 func! QuickRun()
