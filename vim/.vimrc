@@ -21,7 +21,7 @@ set t_Co=256
 inoremap jj <ESC>
 
 " quick copy
-vnoremap <C-D> VyP
+vnoremap <C-D> yP
 nnoremap <C-D> VyP
 
 nnoremap <Tab> >>_
