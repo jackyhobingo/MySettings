@@ -8,6 +8,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'preservim/nerdcommenter'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -15,9 +16,18 @@ filetype plugin indent on    " required
 " need commenter
 vmap <C-_> <Leader>c<space>
 
+" tagbar
+let g:tagbar_left=1
+autocmd BufReadPost *.cpp,*.c,*.h*.hpp,*.cc,*.cxx call tagbar#autoopen()
+map <F8> :TagbarToggle<CR>
+set updatetime=100
+
 set nu
 set ruler 
 set title
+set hlsearch
+hi Search ctermbg=LightYellow
+hi Search ctermfg=Red
 set mouse=a
 set t_Co=256
 
