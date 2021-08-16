@@ -8,4 +8,10 @@ vim_install () {
 	vim +PluginInstall +qall
 }
 
+jetbrains () {
+	cp ./idea/.ideavimrc ~/.ideavimrc
+	cp ./idea/ideapostfix.postfixTemplates ~/ideapostfix.postfixTemplates
+}
+
 vim_install
+jetbrains
