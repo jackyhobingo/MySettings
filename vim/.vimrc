@@ -7,9 +7,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'preservim/nerdcommenter'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" need commenter
+vmap <C-_> <Leader>c<space>
 
 set nu
 set ruler 
