@@ -19,9 +19,17 @@ Plugin 'vim-scripts/cecscope'
 Plugin 'vim-scripts/highlight.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'easymotion/vim-easymotion'
 call vundle#end()            " required
 filetype plugin indent on    " required
-
+" easymotion
+let g:EasyMotion_do_mapping=0 " Disable default mappings
+let g:EasyMotion_smartcase=0
+nmap <Space> <Plug>(easymotion-overwin-f2)
+nmap / <Plug>(easymotion-sn)
+nmap n <Plug>(easymotion-next)
+nmap N <Plug>(easymotion-prev)
 " supertab
 let g:SuperTabRetainCompletionType=2
 " vim-airline
@@ -37,6 +45,7 @@ vmap <C-_> <Leader>c<space>
 
 " nerdtree
 nnoremap <F1> :NERDTreeTabsToggle<CR>
+let NERDTreeWinPos='right'
 
 " YouCompleteMe
 "let g:ycm_server_keep_logfiles = 1
