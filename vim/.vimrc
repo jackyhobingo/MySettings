@@ -1,3 +1,6 @@
+"============================================================================
+"                          Vundle and Plugin settings
+"============================================================================
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -9,28 +12,62 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'preservim/nerdcommenter'
 Plugin 'majutsushi/tagbar'
-
+"Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ervandew/supertab'
+Plugin 'joe-skb7/cscope-maps'
+Plugin 'vim-scripts/cecscope'
+Plugin 'vim-scripts/highlight.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" need commenter
+" supertab
+let g:SuperTabRetainCompletionType=2
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" vim-airline-themes 
+let g:airline_theme = 'violet'
+
+" nerdcommenter
+nmap <C-_> <Leader>c<space>
 vmap <C-_> <Leader>c<space>
+
+" nerdtree
+nnoremap <F1> :NERDTreeTabsToggle<CR>
+
+" YouCompleteMe
+"let g:ycm_server_keep_logfiles = 1
+"let g:ycm_server_log_level = 'debug'
+"let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf=0
+"let g:ycm_python_binary_path='/usr/bin/python3'
 
 " tagbar
 let g:tagbar_left=1
 autocmd BufReadPost *.cpp,*.c,*.h*.hpp,*.cc,*.cxx call tagbar#autoopen()
 map <F8> :TagbarToggle<CR>
-set updatetime=100
+set updatetime=1000
+
+"============================================================================
+"                          Normal Settings
+"============================================================================
 
 set nu
 set ruler 
 set title
+set mouse=a
+set t_Co=256
+set showcmd
 set hlsearch
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
-set mouse=a
-set t_Co=256
 
+"============================================================================
+"                          My shortcuts
+"============================================================================
 " quick esc
 inoremap jj <ESC>
 
@@ -67,16 +104,12 @@ nnoremap z} vi}
 nmap zz <C-W>\|
 nnoremap ZZ <C-W>=
 
-nnoremap zb ciw
-vnoremap zb <ESC>ciw
-nnoremap <TAB> >>
-nnoremap <S-TAB> <<
-
 nnoremap zh ^
 nnoremap zl $
 nnoremap <BS> a<BS>
-
-" For simpleScalar using
+"============================================================================
+"                          For different file indent
+"============================================================================
 au BufNewFile,BufRead *.def	set ft=c
 
 au Filetype python set tabstop=4 softtabstop=4 shiftwidth=4 smartindent expandtab autoindent
@@ -87,8 +120,9 @@ au Filetype c set tabstop=8 shiftwidth=8 smartindent autoindent
 if has("autocmd")
   filetype plugin indent on
 endif
-set showcmd
-nnoremap <F1> :NERDTreeTabsToggle<CR>
+"============================================================================
+"                          Other useful funciton
+"============================================================================
 " Quick Run
 nmap <F5> :call QuickRun()<CR>
 func! QuickRun()
