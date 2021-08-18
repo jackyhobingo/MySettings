@@ -8,10 +8,16 @@ vim_install () {
 	vim +PluginInstall +qall
 }
 
+# jetbrains
 jetbrains () {
 	cp ./idea/.ideavimrc ~/.ideavimrc
 	cp ./idea/ideapostfix.postfixTemplates ~/ideapostfix.postfixTemplates
 }
 
+git_set(){
+	bash ./git/git_alias.sh
+}
+
 vim_install
 jetbrains
+git_set
