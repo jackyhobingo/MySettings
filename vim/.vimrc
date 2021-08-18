@@ -47,7 +47,7 @@ vmap <C-_> <Leader>c<space>
 " nerdtree
 nnoremap <F1> :NERDTreeTabsToggle<CR>
 let NERDTreeWinPos='right'
-
+let NERDSpaceDelims=1
 " YouCompleteMe
 "let g:ycm_server_keep_logfiles = 1
 "let g:ycm_server_log_level = 'debug'
@@ -75,6 +75,8 @@ set hlsearch
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
 
+set splitright
+set splitbelow
 "============================================================================
 "                          My shortcuts
 "============================================================================
@@ -90,7 +92,6 @@ nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv 
-
 " move screen to focus this line on line 2
 nnoremap zt zt2k2j
 
@@ -152,3 +153,4 @@ elseif &filetype == 'cpp'
 	exec "!time ./quickRun.out"
 endif
 endfunc
+:command! -nargs=* -complete=shellcmd R vnew | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
