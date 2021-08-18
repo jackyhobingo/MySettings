@@ -14,5 +14,6 @@ git config --global alias.co checkout
 git config --global alias.lg "log --color --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -30"
 git config --global alias.adog "lg"
 git config --global alias.l "log --oneline --decorate"
-git config --global alias.sh "!git config user.name & git config user.email"
+git config --global alias.sh "!git config user.name && git config user.email"
+git config --global alias.setUserName "!git config user.name 'Jacky Ho' && git config user.email 'jackyhobingo@gmail.com'"
 
