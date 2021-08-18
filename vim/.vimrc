@@ -31,6 +31,7 @@ nmap / <Plug>(easymotion-sn)
 nmap n <Plug>(easymotion-next)
 nmap N <Plug>(easymotion-prev)
 " supertab
+let g:SuperTabCrMapping = 1
 let g:SuperTabRetainCompletionType=2
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -58,7 +59,7 @@ let NERDTreeWinPos='right'
 let g:tagbar_left=1
 autocmd BufReadPost *.cpp,*.c,*.h*.hpp,*.cc,*.cxx call tagbar#autoopen()
 map <F8> :TagbarToggle<CR>
-set updatetime=1000
+set updatetime=100
 
 "============================================================================
 "                          Normal Settings
@@ -79,6 +80,7 @@ hi Search ctermfg=Red
 "============================================================================
 " quick esc
 inoremap jj <ESC>
+vnoremap ;; <ESC>
 
 " quick copy
 vnoremap <C-D> yP
@@ -110,12 +112,14 @@ nnoremap z[ vi[
 nnoremap z{ vi{
 nnoremap z} vi}
 
-nmap zz <C-W>\|
+nnoremap zz <C-W>\|
 nnoremap ZZ <C-W>=
 
 nnoremap zh ^
 nnoremap zl $
 nnoremap <BS> a<BS>
+" clear hlsearch
+nnoremap ? :noh<CR>
 "============================================================================
 "                          For different file indent
 "============================================================================
