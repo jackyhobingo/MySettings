@@ -1,7 +1,8 @@
 #! /bin/bash
 
 git config --global alias.st status
-git config --global alias.br "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate"
+git config --global alias.ref "for-each-ref --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate"
+git config --global alias.br "branch"
 git config --global alias.del "branch -D"
 git config --global alias.save "!git add -A && git commit -m 'chore: savepoint'"
 git config --global alias.update "!git commit --no-edit --amend"
