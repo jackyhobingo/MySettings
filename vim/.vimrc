@@ -45,7 +45,7 @@ nmap <C-_> <Leader>c<space>
 vmap <C-_> <Leader>c<space>
 
 " nerdtree
-nnoremap <F1> :NERDTreeTabsToggle<CR>
+nnoremap <F2> :NERDTreeTabsToggle<CR>
 let NERDTreeWinPos='right'
 let NERDSpaceDelims=1
 " YouCompleteMe
@@ -66,6 +66,10 @@ set updatetime=100
 "============================================================================
 
 set nu
+set relativenumber
+
+nmap <F6> :set nu!<CR>:set relativenumber!<CR>
+
 set ruler 
 set title
 set mouse=a

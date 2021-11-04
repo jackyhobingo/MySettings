@@ -132,5 +132,7 @@ function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
     echo "["${ref#refs/heads/}"]";
 }
- 
+
+LC_ALL=en_US.UTF-8
+
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[\033[1;35m\]$(lunch_target)\[\033[0m\]\[\033[1;33m\]$(git_branch)\[\033[0m\]$ '
