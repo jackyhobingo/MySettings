@@ -19,7 +19,7 @@ cp ~/.vimrc new_home/
 zip -r new_home/.vim/bundle.zip ~/.vim/bundle 
 cp ~/.vim/plugin new_home/.vim/plugin
 
-# 
+# idea
 cp ~/.ideavim new_home/
 
 # ssh
