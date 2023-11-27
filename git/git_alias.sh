@@ -8,7 +8,6 @@ git config --global alias.save "!git add -A && git commit -m 'chore: savepoint'"
 git config --global alias.update "!git commit --no-edit --amend"
 git config --global alias.amend "!git commit --amend"
 git config --global alias.undo "reset HEAD~1 --mixed"
-git config --global alias.res "reset --hard"
 git config --global alias.cm commit
 git config --global alias.co checkout
 git config --global alias.lg "log --color --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -30"
