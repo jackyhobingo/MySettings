@@ -21,6 +21,12 @@ git_set(){
 	bash ./git/git_alias.sh
 }
 
+tmux_set() {
+	echo "Set up tmux"
+	cp ./tmux/.tmux.conf ~/.tmux.conf
+}
+
 vim_install
 jetbrains
 git_set
+tmux_set
